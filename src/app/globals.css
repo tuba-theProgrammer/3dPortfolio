@@ -16,18 +16,33 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.content {
+  width: 334px;
+  height: 216px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
 }
+
+.wrapper {
+  padding: 10px;
+  width: 400px;
+  height: 432px;
+  transform: scale(0.5);
+  transform-origin: top left;
+}
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
