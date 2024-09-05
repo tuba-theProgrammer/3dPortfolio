@@ -15,9 +15,12 @@
     "@react-three/drei": "^9.112.0",
     "@react-three/fiber": "^8.17.6",
     "@react-three/postprocessing": "^2.16.2",
+    "framer-motion": "^11.5.3",
     "next": "14.2.7",
     "react": "^18",
     "react-dom": "^18",
+    "react-parallax-tilt": "^1.7.237",
+    "react-tilt": "^1.0.2",
     "three": "^0.168.0"
   },
   "devDependencies": {

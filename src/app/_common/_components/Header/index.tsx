@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
 
                 {/* Logo */}
                 <div className="flex items-center justify-center md:justify-center sm:justify-center w-full md:w-auto">
-                <div onClick={handleIconClick} className="cursor-pointer text-white font-bold text-[25px] ">
+                <div onClick={handleIconClick} className="cursor-pointer text-white font-semibold text-[25px] ">
   <span>TUBA</span>
   <span className="ml-3">ASIF.</span>
 </div>

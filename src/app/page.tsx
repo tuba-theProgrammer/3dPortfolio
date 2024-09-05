@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./_common/_components/Header";
 import HeroSection from "./_common/_components/HeroSection";
+import About from "./_common/_components/About";
 
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
  
                 </section>
                 <section id="about" className="pt-20">
- 
+                <About/>
                </section>
 
 <section id="work" className="pt-20">
