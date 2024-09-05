@@ -2,7 +2,7 @@ import React from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
-// import { styles } from "../styles";
+import { styles } from "../../_enums/style/styles";
 import { services } from "../../_enums/Data/index";
 import { SectionWrapper } from "../../_enums/hoc";
 import { fadeIn, textVariant } from "../../_enums/utils/motion";
@@ -41,13 +41,13 @@ const About: React.FC = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        {/* <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2> */}
+        <p className={styles.sectionSubText}>Introduction</p>
+        <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        className='mt-4 text-secondary text-white text-[20px]  leading-[30px]'
       >
         I'm a skilled software developer with experience in TypeScript and
         JavaScript, and expertise in frameworks like React, Node.js, and

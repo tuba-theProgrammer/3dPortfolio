@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Navbar from "./_common/_components/Header";
 import HeroSection from "./_common/_components/HeroSection";
 import About from "./_common/_components/About";
+import Experience from "./_common/_components/Experience";
+import Tech from "./_common/_components/Tech";
 
 
 export default function Home() {
@@ -16,22 +18,24 @@ export default function Home() {
             </div>
             <div className="mx-auto  overflow-x-hidden">
                 <div className="flex flex-col">
-                <section id="home" className=" h-[850px] w-full">
-
+     
+                <section id="home" className=" h-[800px] w-full">
                    <HeroSection/>
- 
                 </section>
-                <section id="about" className="pt-20">
+
+                <section id="about" className="">
                 <About/>
                </section>
 
-<section id="work" className="pt-20">
- 
-</section>
+              <section id="work" className="">
+              <Experience/>
+              <Tech/>
+              </section>
 
-<section id="contact" className="pt-20">
+
+             <section id="contact" className="">
  
-</section> 
+              </section> 
                  
                 </div>
             </div>
