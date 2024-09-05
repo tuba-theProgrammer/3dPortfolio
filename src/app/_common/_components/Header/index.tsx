@@ -20,7 +20,6 @@ const Navbar: React.FC = () => {
   }, []);
 
   const toggleMenu = () => {
-
     setMenuOpen(!menuOpen);
   };
 
@@ -30,7 +29,8 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <div className="mx-auto max-w-screen-2xl overflow-x-hidden">
+      <div className=" bg-black mx-auto max-w-screen-2xl overflow-x-hidden">
+        
         <div className="flex flex-col mx-0 lg:mx-16">
           <div className="shadow-sm ">
             <div className="flex flex-col flex-shrink-0 justify-center h-16 xlg:h-20 w-full">
@@ -57,38 +57,37 @@ const Navbar: React.FC = () => {
 
                 {/* Logo */}
                 <div className="flex items-center justify-center md:justify-center sm:justify-center w-full md:w-auto">
-                  <div onClick={handleIconClick} className="cursor-pointer">
-                    <img
-                      className="lg:h-10 w-13 h-8"
-                      src={isMobile ? "assets/Logo/Logo wrap mobile.png" : "assets/Logo/Logo wrap.png"}
-                      alt="Logo"
-                    />
-                  </div>
+                <div onClick={handleIconClick} className="cursor-pointer text-white font-bold text-[25px] ">
+  <span>TUBA</span>
+  <span className="ml-3">ASIF.</span>
+</div>
+
+
                 </div>
 
                 {/* Desktop Links */}
                 <div className="hidden md:flex md:items-center md:space-x-4">
                 <a
                     href="#home"
-                    className="hover:text-buttonHover-400 flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
+                    className="hover:text-buttonHover-400 text-lg flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
                   >
                     Home
                   </a>
                   <a
                     href="#about"
-                    className="hover:text-buttonHover-400 flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
+                    className="hover:text-buttonHover-400  text-lg flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
                   >
                     About
                   </a>
                   <a
                     href="#work"
-                    className="hover:text-buttonHover-400 flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
+                    className="hover:text-buttonHover-400 text-lg  flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
                   >
                     Work
                   </a>
                   <a
                     href="#contact"
-                    className="hover:text-buttonHover-400 flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
+                    className="hover:text-buttonHover-400 text-lg  flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
                   >
                     Contact
                   </a>

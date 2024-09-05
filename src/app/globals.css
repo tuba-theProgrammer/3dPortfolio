@@ -16,7 +16,6 @@
   }
 }
 
-
 .content {
   width: 334px;
   height: 216px;
@@ -27,9 +26,23 @@
   padding: 0;
 }
 
+/* Custom scrollbar styles for WebKit browsers */
+.content::-webkit-scrollbar {
+  width: 6px; /* Adjust scrollbar width */
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1; /* Color of the scrollbar thumb */
+  border-radius: 3px; /* Make it rounded */
+}
+
+.content::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Color of the scrollbar track */
+}
+
 .wrapper {
-  padding: 10px;
-  width: 400px;
+  padding: 5px;
+  width: 670px;
   height: 432px;
   transform: scale(0.5);
   transform-origin: top left;

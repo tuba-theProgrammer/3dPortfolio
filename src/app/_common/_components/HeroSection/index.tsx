@@ -72,24 +72,24 @@ export default function HeroSection() {
         <group rotation={[0, Math.PI, 0]}>
           <Model  position={[0, 1, 0]}/>
           <Text
-        position={[-10, 2, 0]} // Adjust position as needed
+        position={[-10, 1, 0]} // Adjust position as needed
         fontSize={1}
         color="white"
         anchorX="center"
         anchorY="middle"
       >
-      Hi, I AM TUBA
+      Greetings
       </Text>
 
       {/* Right Text */}
       <Text
-        position={[10, 2, 0]} // Adjust position as needed
+        position={[10, 1, 0]} // Adjust position as needed
         fontSize={1}
         color="white"
         anchorX="center"
         anchorY="middle"
       >
-        Right Text
+        Traveler
       </Text>
         </group>
         <Environment preset="city" />
