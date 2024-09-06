@@ -94,7 +94,7 @@
       company_name: "Fiverr",
       icon: "./assets/Images/company/fiverrLogo.png",
       iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
+      date: "dec 2019 - Present",
       points: [
         "Designed and developed full-stack applications using React.js, Next.js, Node.js, and Express.js, including 3D animated websites utilizing Three.js and React Three Fiber.",
         "Collaborated with clients to gather requirements, manage projects, and deliver practical, tailored software solutions across various technologies.",
@@ -109,27 +109,26 @@
  export const testimonials = [
     {
       testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
+        "She is very professional and exceptional the work is flawless highly recommend her",
+      name: "asharib1704",
+      designation: "Client",
+      company: "From Ireland",
     },
     {
       testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
+        "Excellent excellent. I couldn't be more happy with how easy it was to work with Tuba. Would 100% use them again for any future projects. Fast and efficient as well as very easy to communicate with.",
+      name: "lilyknightz",
+      designation: "Client",
+      company: "From United States",
+
     },
     {
       testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
+        "really glad to work with Tuba, she has great communication skills, and knows what she's doing. Really fast delivered, as soon I provided the task she started working on it. Don't miss the opportunity to work with her she will deliver great work more than you think, with clear documentation.",
+      name: "sojousef",
+      designation: "Client",
+      company: "From Australia",
+
     },
   ];
   

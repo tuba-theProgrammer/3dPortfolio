@@ -16,6 +16,8 @@
     "@react-three/drei": "^9.112.0",
     "@react-three/fiber": "^8.17.6",
     "@react-three/postprocessing": "^2.16.2",
+    "dotenv": "^16.4.5",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^11.5.3",
     "next": "14.2.7",
     "react": "^18",

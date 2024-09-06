@@ -1,9 +1,9 @@
 import * as THREE from 'three';
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense, useRef, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { motion } from "framer-motion";
-import { Html, Environment, useGLTF, ContactShadows, OrbitControls,Text } from '@react-three/drei';
-import HeroPage from './_components/HeroSubPage'
+import { Html, Environment, useGLTF, ContactShadows, OrbitControls, Text } from '@react-three/drei';
+import HeroPage from './_components/HeroSubPage';
 
 // Define the type for the props used in the Model component
 type ModelProps = JSX.IntrinsicElements['group'];
@@ -66,41 +66,72 @@ function Model(props: ModelProps) {
 }
 
 export default function HeroSection() {
+  // State for text positions and model scale
+  const [textPositions, setTextPositions] = useState<{
+    left: [number, number, number];
+    right: [number, number, number];
+  }>({
+    left: [-10, 1, 0],
+    right: [10, 1, 0],
+  });
+
+  const [modelScale, setModelScale] = useState(1); // Initial scale of the model
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1000) {
+        // Adjust text positions and scale for md and smaller screens
+        setTextPositions({ left: [0, 5, 0], right: [0, -5, 0] });
+        setModelScale(0.75); // Decrease scale for smaller screens
+      } else {
+        // Reset text positions and scale for larger screens
+        setTextPositions({ left: [-10, 1, 0], right: [10, 1, 0] });
+        setModelScale(1); // Original scale
+      }
+    };
+
+    // Add resize event listener
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial check
+
+    // Cleanup the event listener
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
-     <Canvas camera={{ position: [-5, 0, -15], fov: 55 }}>
-      <pointLight position={[10, 10, 10]} intensity={1.5} />
-      <Suspense fallback={null}>
-        <group rotation={[0, Math.PI, 0]}>
-          <Model  position={[0, 1, 0]}/>
-          <Text
-        position={[-10, 1, 0]} // Adjust position as needed
-        fontSize={1}
-        
-        color="white"
-        anchorX="center"
-        anchorY="middle"
-      >
-      Greetings
-      </Text>
+      <Canvas camera={{ position: [-5, 0, -15], fov: 55 }}>
+        <pointLight position={[10, 10, 10]} intensity={1.5} />
+        <Suspense fallback={null}>
+          <group rotation={[0, Math.PI, 0]}>
+            <Model position={[0, 1, 0]} scale={[modelScale, modelScale, modelScale]} /> {/* Apply dynamic scale */}
+            {/* Left Text */}
+            <Text
+              position={textPositions.left}
+              fontSize={1}
+              color="white"
+              anchorX="center"
+              anchorY="middle"
+            >
+              Greetings
+            </Text>
 
-      {/* Right Text */}
-      <Text
-        position={[10, 1, 0]} // Adjust position as needed
-        fontSize={1}
-        color="white"
-        anchorX="center"
-        anchorY="middle"
-      >
-        Traveler
-      </Text>
-        </group>
-        <Environment preset="city" />
-      </Suspense>
-      <ContactShadows position={[0, -4.5, 0]} scale={20} blur={2} far={4.5} />
-      <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2} />
-
-    </Canvas>
+            {/* Right Text */}
+            <Text
+              position={textPositions.right}
+              fontSize={1}
+              color="white"
+              anchorX="center"
+              anchorY="middle"
+            >
+              Traveler
+            </Text>
+          </group>
+          <Environment preset="city" />
+        </Suspense>
+        <ContactShadows position={[0, -4.5, 0]} scale={20} blur={2} far={4.5} />
+        <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2} />
+      </Canvas>
 
       <div className='absolute xs:bottom-10 bottom-32 mt-5 w-full flex justify-center items-center'>
         <a href='#about'>
@@ -119,6 +150,6 @@ export default function HeroSection() {
           </div>
         </a>
       </div>
-      </>
-     );
+    </>
+  );
 }

@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect,useRef, useState } from "react";
 
 const Navbar: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null); // Create a ref for the mobile menu
 
   useEffect(() => {
     const handleResize = () => {
@@ -19,9 +20,27 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen]);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
 
   const handleIconClick = () => {
     window.location.reload();
@@ -69,25 +88,25 @@ const Navbar: React.FC = () => {
                 <div className="hidden md:flex md:items-center md:space-x-4">
                 <a
                     href="#home"
-                    className="hover:text-buttonHover-400 text-lg flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
+                    className="hover:text-gray-400 text-lg flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
                   >
                     Home
                   </a>
                   <a
                     href="#about"
-                    className="hover:text-buttonHover-400  text-lg flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
+                    className="hover:text-gray-400  text-lg flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
                   >
                     About
                   </a>
                   <a
                     href="#work"
-                    className="hover:text-buttonHover-400 text-lg  flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
+                    className="hover:text-gray-400 text-lg  flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
                   >
                     Work
                   </a>
                   <a
                     href="#contact"
-                    className="hover:text-buttonHover-400 text-lg  flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
+                    className="hover:text-gray-400 text-lg  flex justify-center items-center gap-2 text-white font-inter font-semibold leading-5 lg:leading-6"
                   >
                     Contact
                   </a>
@@ -97,9 +116,9 @@ const Navbar: React.FC = () => {
                 {isMobile && (
                   <div className="flex justify-center items-center rounded-lg">
                     <div className="flex items-start">
-                      <div className="flex justify-center items-center text-white font-inter text-sm font-semibold leading-5">
+                      <a href="#contact" className="hover:text-gray-400 flex justify-center items-center text-white font-inter text-sm font-semibold leading-5">
                         Contact
-                      </div>
+                      </a>
                     </div>
                   </div>
                 )}
@@ -108,8 +127,8 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu Links */}
             {menuOpen && (
-              <div className="flex flex-col bg-black py-2 px-6">
-                 <a href="#home" className="py-2 text-white font-inter font-semibold leading-6">
+              <div ref={menuRef} className="flex flex-col bg-black py-2 px-6">
+                <a href="#home" className="py-2 text-white font-inter font-semibold leading-6">
                   Home
                 </a>
                 <a href="#about" className="py-2 text-white font-inter font-semibold leading-6">
@@ -118,7 +137,6 @@ const Navbar: React.FC = () => {
                 <a href="#work" className="py-2 text-white font-inter font-semibold leading-6">
                   Work
                 </a>
-              
               </div>
             )}
           </div>

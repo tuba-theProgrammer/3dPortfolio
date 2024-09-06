@@ -46,6 +46,8 @@ const config: Config = {
       fontFamily: {
         inter: ['Inter', 'sans-serif'], // Add 'Inter' as a custom font family
         sans: ['Inter', 'sans-serif'], // Override default sans-serif with 'Inter'
+        roboto: ['Roboto', 'sans-serif'],
+        opensans: ['Open Sans', 'sans-serif'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
