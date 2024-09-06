@@ -109,7 +109,7 @@
   export const testimonials = [
     {
       testimonial:
-        "She is very professional and exceptional the work is flawless highly recommend her",
+        "She is very professional and exceptional, the work is flawless highly recommend her.",
       name: "asharib1704",
       designation: "Client",
       company: "From Ireland",
@@ -123,7 +123,7 @@
     },
     {
       testimonial:
-        "Really glad to work with Tuba, she has great communication skills, and knows what she is doing. Really fast delivered, as soon as I provided the task she started working on it. Dont miss the opportunity to work with her; she will deliver great work more than you think, with clear documentation.",
+        "Really glad to work with Tuba. she has great communication skills and knows what she is doing. Really fast delivered, as soon as I provided the task, she started working on it. Dont miss the opportunity to work with her, she will deliver great work more than you think, with clear documentation.",
       name: "sojousef",
       designation: "Client",
       company: "From Australia",
