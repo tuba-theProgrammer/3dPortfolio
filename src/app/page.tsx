@@ -9,6 +9,7 @@ import Tech from "./_common/_components/Tech";
 import Project from "./_common/_components/Project";
 import Testimonials from "./_common/_components/Testimonials";
 import Contact from "./_common/_components/Contact";
+import ProjectStatistics from "./_common/_components/ProjectStatistics";
 
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
 
               <section id="work" className="">
               <Experience/>
+              <ProjectStatistics/>
               <Tech/>
               <Project/>
               <Testimonials/>

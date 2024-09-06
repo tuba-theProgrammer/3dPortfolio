@@ -31,8 +31,8 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
+        background: "#1c191b",
+        color: "#fffff",
       }}
       visible={inView}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
@@ -43,7 +43,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
           <img
             src={experience.icon}
             alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
+            className='w-[90%] h-[90%] object-fill rounded-[40px]'
           />
         </div>
       }

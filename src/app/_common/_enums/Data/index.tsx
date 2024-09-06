@@ -7,7 +7,7 @@
       icon: "./assets/Images/web.png",
     },
     {
-      title: "React Native Developer",
+      title: "Desktop App Developer",
       icon: "./assets/Images/mobile.png",
     },
     {
@@ -15,7 +15,7 @@
       icon: "./assets/Images/backend.png",
     },
     {
-      title: "Content Creator",
+      title: "Creative Web Developer",
       icon: "./assets/Images/creator.png",
     },
   ];
@@ -77,57 +77,33 @@
   
  export const experiences = [
     {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: "./assets/Images/company/starbucks.png",
-      iconBg: "#383E56",
-      date: "March 2020 - April 2021",
+      title: " Lead Backend Developer",
+      company_name: "Isaac's Code",
+      icon: "./assets/Images/company/isaacscodeLogo.png",
+      iconBg: "black",
+      date: "july 2022 - August 2024",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Led end-to-end development of web applications as the sole Node.js backend developer.",
+        "Designed and maintained databases, optimizing application performance and responsiveness.",
+        "Developed RESTful APIs with Node.js frameworks, ensuring scalability, security, and maintainability.",
+        "Collaborated with frontend teams for seamless integration of backend services.",
       ],
     },
     {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: "./assets/Images/company/starbucks.png",
+      title: "Full Stack Developer",
+      company_name: "Fiverr",
+      icon: "./assets/Images/company/fiverrLogo.png",
       iconBg: "#E6DEDD",
       date: "Jan 2021 - Feb 2022",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Designed and developed full-stack applications using React.js, Next.js, Node.js, and Express.js, including 3D animated websites utilizing Three.js and React Three Fiber.",
+        "Collaborated with clients to gather requirements, manage projects, and deliver practical, tailored software solutions across various technologies.",
+        "Implemented RESTful APIs and GraphQL for seamless data flow between frontend and backend, ensuring robust and scalable architectures.",
+        "Managed complex backend systems and frontend development, ensuring a cohesive and high-performing user experience.",
+        "Conducted testing, debugging, and code reviews to maintain high-quality standards in all applications."
       ],
     },
-    {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: "./assets/Images/company/starbucks.png",
-      iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: "./assets/Images/company/starbucks.png",
-      iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
+   
   ];
   
  export const testimonials = [
@@ -159,67 +135,67 @@
   
   export const projects = [
     {
-      name: "Car Rent",
+      name: "ADALANCE, Freelancing Platform",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "Adalance is a dynamic freelancing platform built with Next.js (TypeScript), Express.js, and PostgreSQL. It connects freelancers and clients with user-friendly tools, including Framer for smooth animations, ensuring a seamless experience for collaboration and growth.",
+      tags: [
+        {
+          name: "Next",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Express",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Postgres",
+          color: "pink-text-gradient",
+        },
+      ],
+      image:  "./assets/Images/Project1Image1.png",
+      source_code_link: "https://github.com/tuba-theProgrammer",
+    },
+    {
+      name: "BOP - Recruitment Space",
+      description:
+        "Recruitment Space is a platform developed for the Bank of Punjab, designed to streamline the hiring process. As the lead backend developer, I built a robust and efficient system that connects employers with top candidates and helps professionals advance their careers. The platform offers powerful tools and a vast network, making hiring and job hunting easier and more efficient.",
+      tags: [
+        {
+          name: "Express",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "graphql",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Sqlite",
+          color: "pink-text-gradient",
+        },
+      ],
+      image:  "./assets/Images/Project3Image1.png",
+      source_code_link: "https://github.com/tuba-theProgrammer",
+    },
+    {
+      name: "FurniCraft - A 3D Furniture Selling Website",
+      description:
+        "FurniCraft enhances furniture shopping with 3D animations, allowing users to explore and customize furniture in a realistic, interactive 3D space. Built with Three.js, React Three Fiber, and Next.js, it offers a seamless experience for visualizing how furniture will fit in your home, ensuring confident purchasing decisions.",
       tags: [
         {
           name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
+          name: "three js",
           color: "green-text-gradient",
         },
         {
-          name: "tailwind",
+          name: "react-three-fibre",
           color: "pink-text-gradient",
         },
       ],
-      image:  "./assets/Images/carrent.png",
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Job IT",
-      description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
-      ],
-      image:  "./assets/Images/carrent.png",
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
-      image:  "./assets/Images/carrent.png",
-      source_code_link: "https://github.com/",
+      image:  "./assets/Images/Project2Image1.png",
+      source_code_link: "https://github.com/tuba-theProgrammer/ThreeJsFurniCraft",
     },
   ];
   

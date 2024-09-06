@@ -26,7 +26,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon }) => (
         <img
           src={icon}
           alt={title}
-          className='w-16 h-16 object-contain'
+          className='w-20 h-20 object-contain'
         />
 
         <h3 className='text-white text-[20px] font-bold text-center'>
@@ -49,11 +49,9 @@ const About: React.FC = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-white text-[20px]  leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        Full Stack Developer with expertise in React , Node js, modern webtechnologies, and creating 3D animated websites. Proven
+ ability to design and implement scalable, user-centric applications. Skilled in optimizing performance, API integration, and leading
+ teamstodeliver high-quality projects. Passionate about problem-solving and continuous learning.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>
