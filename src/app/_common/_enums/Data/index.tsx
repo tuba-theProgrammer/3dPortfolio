@@ -79,7 +79,7 @@
     {
       title: " Lead Backend Developer",
       company_name: "Isaac's Code",
-      icon: "./assets/Images/company/isaacscodeLogo.png",
+      icon: "./assets/Images/company/isaacscodelogo.png",
       iconBg: "black",
       date: "july 2022 - August 2024",
       points: [
