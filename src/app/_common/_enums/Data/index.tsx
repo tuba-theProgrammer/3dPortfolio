@@ -149,7 +149,7 @@
           color: "pink-text-gradient",
         },
       ],
-      image:  "./assets/Images/Project1Image1.png",
+      image:  "./assets/Images/Project1image1.png",
       source_code_link: "https://github.com/tuba-theProgrammer",
     },
     {
