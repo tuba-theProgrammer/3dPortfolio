@@ -1,9 +1,12 @@
 import * as THREE from 'three';
 import React, { Suspense, useRef, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 import { Html, Environment, useGLTF, ContactShadows, OrbitControls, Text } from '@react-three/drei';
 import HeroPage from './_components/HeroSubPage';
+
+// Preload the GLTF model
+useGLTF.preload('./assets/3dModel/mac-draco.glb');
 
 // Define the type for the props used in the Model component
 type ModelProps = JSX.IntrinsicElements['group'];
