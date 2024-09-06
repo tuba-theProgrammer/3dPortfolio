@@ -106,26 +106,27 @@
    
   ];
   
- export const testimonials = [
+  export const testimonials = [
     {
-      testimonial:"She is very professional and exceptional the work is flawless highly recommend her",
+      testimonial:
+        "She is very professional and exceptional the work is flawless highly recommend her",
       name: "asharib1704",
       designation: "Client",
       company: "From Ireland",
     },
     {
-      testimonial:"Excellent. I couldnt be more happy with how easy it was to work with Tuba. Would 100% use them again for any future projects. Fast and efficient as well as very easy to communicate with.",
+      testimonial:
+        "Excellent. I couldn&apos;t be more happy with how easy it was to work with Tuba. Would 100% use them again for any future projects. Fast and efficient as well as very easy to communicate with.",
       name: "lilyknightz",
       designation: "Client",
       company: "From United States",
-
     },
     {
-      testimonial:"Really glad to work with Tuba, she has great communication skills, and knows what she is doing. Really fast delivered, as soon I provided the task she started working on it. Dont miss the opportunity to work with her she will deliver great work more than you think, with clear documentation.",
+      testimonial:
+        "Really glad to work with Tuba, she has great communication skills, and knows what she is doing. Really fast delivered, as soon as I provided the task she started working on it. Don&apos;t miss the opportunity to work with her; she will deliver great work more than you think, with clear documentation.",
       name: "sojousef",
       designation: "Client",
       company: "From Australia",
-
     },
   ];
   
