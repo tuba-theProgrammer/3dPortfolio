@@ -13,7 +13,7 @@ interface ServiceCardProps {
   title: string;
   icon: string;
 }
-
+ 
 const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full' tiltMaxAngleX={45} tiltMaxAngleY={45} scale={1} transitionSpeed={450}>
     <motion.div
