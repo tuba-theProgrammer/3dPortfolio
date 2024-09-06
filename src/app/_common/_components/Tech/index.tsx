@@ -1,4 +1,4 @@
-import Image from 'next/image';
+
 import React from "react";
 import { technologies } from "../../_enums/Data/index";
 import { SectionWrapper } from "../../_enums/hoc";
@@ -19,12 +19,10 @@ const Tech: React.FC = () => {
         <motion.div key={technology.name} variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
           <Tilt tiltMaxAngleX={45} tiltMaxAngleY={45} perspective={1000} scale={1}>
             <div className="w-28 h-28 bg-tertiary rounded-[25px]">
-              <Image
+              <img
                 alt={technology.name}
                 src={technology.icon}
-                layout="fill" // Ensures the image fills the parent container
-                objectFit="contain" // Adjusts how the image fits within its container
-              />
+                           />
             </div>
           </Tilt>
         </motion.div>
