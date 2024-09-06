@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Html, Environment, useGLTF, ContactShadows, OrbitControls, Text } from '@react-three/drei';
 import HeroPage from './_components/HeroSubPage';
 
-// Preload the GLTF model
+// Preload the GLTF model with Draco compression
 useGLTF.preload('./assets/3dModel/mac-draco.glb');
 
 // Define the type for the props used in the Model component
@@ -24,8 +24,8 @@ interface GLTFResult {
 function Model(props: ModelProps) {
   const group = useRef<THREE.Group>(null);
 
-  // Load the GLTF model
-  const { nodes, materials } = useGLTF('./assets/3dModel/mac-draco.glb') as unknown as GLTFResult;
+  // Load the GLTF model with Draco compression for better performance
+  const { nodes, materials } = useGLTF('./assets/3dModel/mac-draco.glb', '/draco-gltf/') as unknown as GLTFResult;
 
   // Animation loop for floating effect
   useFrame((state) => {
@@ -49,7 +49,7 @@ function Model(props: ModelProps) {
           <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
           <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
           <mesh geometry={nodes['Cube008_2'].geometry}>
-            {/* Drei's HTML component can "hide behind" canvas geometry */}
+            {/* Use Html component from drei to render DOM elements inside the 3D canvas */}
             <Html className="content" rotation-x={-Math.PI / 2} position={[0, 0.05, -0.09]} transform occlude>
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 <HeroPage />
@@ -103,9 +103,9 @@ export default function HeroSection() {
 
   return (
     <>
-      <Canvas camera={{ position: [-5, 0, -15], fov: 55 }}>
+      <Canvas dpr={[1, 1.5]} camera={{ position: [-5, 0, -15], fov: 55 }}>
         <pointLight position={[10, 10, 10]} intensity={1.5} />
-        <Suspense fallback={null}>
+        <Suspense fallback={<Html><div>Loading model...</div></Html>}>
           <group rotation={[0, Math.PI, 0]}>
             <Model position={[0, 1, 0]} scale={[modelScale, modelScale, modelScale]} /> {/* Apply dynamic scale */}
             {/* Left Text */}
