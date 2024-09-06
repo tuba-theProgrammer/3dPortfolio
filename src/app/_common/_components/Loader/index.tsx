@@ -1,32 +1,19 @@
-import { Html, useProgress } from "@react-three/drei";
-import React from "react";
+import { Html, useProgress } from '@react-three/drei';
+import { a, useSpring } from '@react-spring/web';
+import React from 'react';
 
-const CanvasLoader: React.FC = () => {
+export default function Loader() {
   const { progress } = useProgress();
+  const props = useSpring({ width: progress + '%' });
+
   return (
-    <Html
-      as="div"
-      center
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <span className="canvas-loader"></span>
-      <p
-        style={{
-          fontSize: 14,
-          color: "#F1F1F1",
-          fontWeight: 800,
-          marginTop: 40,
-        }}
-      >
-        {progress.toFixed(2)}%
-      </p>
+    <Html center>
+      <div className="loading">
+        <div className="loading-bar-container">
+          <a.div className="loading-bar" style={props} />
+        </div>
+        <p>{Math.round(progress)} % loaded</p>
+      </div>
     </Html>
   );
-};
-
-export default CanvasLoader;
+}

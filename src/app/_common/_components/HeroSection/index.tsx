@@ -4,14 +4,12 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { motion } from 'framer-motion';
 import { Html, Environment, useGLTF, ContactShadows, OrbitControls, Text } from '@react-three/drei';
 import HeroPage from './_components/HeroSubPage';
+import Loader from '../Loader'
 
-// Preload the GLTF model with Draco compression
 useGLTF.preload('./assets/3dModel/mac-draco.glb');
 
-// Define the type for the props used in the Model component
 type ModelProps = JSX.IntrinsicElements['group'];
 
-// Extend GLTF result type with required nodes and materials properties
 interface GLTFResult {
   nodes: {
     [key: string]: THREE.Mesh;
@@ -23,11 +21,8 @@ interface GLTFResult {
 
 function Model(props: ModelProps) {
   const group = useRef<THREE.Group>(null);
-
-  // Load the GLTF model with Draco compression for better performance
   const { nodes, materials } = useGLTF('./assets/3dModel/mac-draco.glb', '/draco-gltf/') as unknown as GLTFResult;
 
-  // Animation loop for floating effect
   useFrame((state) => {
     if (group.current) {
       const t = state.clock.getElapsedTime();
@@ -49,7 +44,6 @@ function Model(props: ModelProps) {
           <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
           <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
           <mesh geometry={nodes['Cube008_2'].geometry}>
-            {/* Use Html component from drei to render DOM elements inside the 3D canvas */}
             <Html className="content" rotation-x={-Math.PI / 2} position={[0, 0.05, -0.09]} transform occlude>
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 <HeroPage />
@@ -69,7 +63,6 @@ function Model(props: ModelProps) {
 }
 
 export default function HeroSection() {
-  // State for text positions and model scale
   const [textPositions, setTextPositions] = useState<{
     left: [number, number, number];
     right: [number, number, number];
@@ -78,26 +71,22 @@ export default function HeroSection() {
     right: [10, 1, 0],
   });
 
-  const [modelScale, setModelScale] = useState(1); // Initial scale of the model
+  const [modelScale, setModelScale] = useState(1);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 1000) {
-        // Adjust text positions and scale for md and smaller screens
         setTextPositions({ left: [0, 5, 0], right: [0, -5, 0] });
-        setModelScale(0.75); // Decrease scale for smaller screens
+        setModelScale(0.75);
       } else {
-        // Reset text positions and scale for larger screens
         setTextPositions({ left: [-10, 1, 0], right: [10, 1, 0] });
-        setModelScale(1); // Original scale
+        setModelScale(1);
       }
     };
 
-    // Add resize event listener
     window.addEventListener('resize', handleResize);
-    handleResize(); // Initial check
+    handleResize();
 
-    // Cleanup the event listener
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -105,28 +94,13 @@ export default function HeroSection() {
     <>
       <Canvas dpr={[1, 1.5]} camera={{ position: [-5, 0, -15], fov: 55 }}>
         <pointLight position={[10, 10, 10]} intensity={1.5} />
-        <Suspense fallback={<Html><div>Loading model...</div></Html>}>
+        <Suspense fallback={<Loader />}>
           <group rotation={[0, Math.PI, 0]}>
-            <Model position={[0, 1, 0]} scale={[modelScale, modelScale, modelScale]} /> {/* Apply dynamic scale */}
-            {/* Left Text */}
-            <Text
-              position={textPositions.left}
-              fontSize={1}
-              color="white"
-              anchorX="center"
-              anchorY="middle"
-            >
+            <Model position={[0, 1, 0]} scale={[modelScale, modelScale, modelScale]} />
+            <Text position={textPositions.left} fontSize={1} color="white" anchorX="center" anchorY="middle">
               Greetings
             </Text>
-
-            {/* Right Text */}
-            <Text
-              position={textPositions.right}
-              fontSize={1}
-              color="white"
-              anchorX="center"
-              anchorY="middle"
-            >
+            <Text position={textPositions.right} fontSize={1} color="white" anchorX="center" anchorY="middle">
               Traveler
             </Text>
           </group>
