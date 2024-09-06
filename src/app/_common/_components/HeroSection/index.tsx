@@ -92,7 +92,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <Canvas dpr={[1, 1.5]} camera={{ position: [-5, 0, -15], fov: 55 }}>
+      <Canvas dpr={[1, 1.5]} camera={{ position: [-5, 0, -15], fov: 55 }}   gl={{ antialias: false, powerPreference: "low-power" }}>
         <pointLight position={[10, 10, 10]} intensity={1.5} />
         <Suspense fallback={<Loader />}>
           <group rotation={[0, Math.PI, 0]}>
