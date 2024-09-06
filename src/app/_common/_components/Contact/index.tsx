@@ -141,7 +141,7 @@ const Contact: React.FC = () => {
       >
         <div className="flex flex-col justify-center items-center p-4 gap-5">
           <div className="flex flex-row">
-            <div className="text-lg">Email :{" "}</div>
+            <div className="text-lg">Email :</div>
             <a
               href="mailto:tubarajput456@gmail.com"
               className="mx-5 text-blue-600 underline hover:text-blue-800 transition-colors duration-300 ease-in-out"

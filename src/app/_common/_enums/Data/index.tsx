@@ -116,7 +116,7 @@
     },
     {
       testimonial:
-        "Excellent excellent. I couldn't be more happy with how easy it was to work with Tuba. Would 100% use them again for any future projects. Fast and efficient as well as very easy to communicate with.",
+        "Excellent. I couldnt be more happy with how easy it was to work with Tuba. Would 100% use them again for any future projects. Fast and efficient as well as very easy to communicate with.",
       name: "lilyknightz",
       designation: "Client",
       company: "From United States",
@@ -124,7 +124,7 @@
     },
     {
       testimonial:
-        "really glad to work with Tuba, she has great communication skills, and knows what she's doing. Really fast delivered, as soon I provided the task she started working on it. Don't miss the opportunity to work with her she will deliver great work more than you think, with clear documentation.",
+      "Really glad to work with Tuba, she has great communication skills, and knows what she is doing. Really fast delivered, as soon I provided the task she started working on it. Dont miss the opportunity to work with her she will deliver great work more than you think, with clear documentation.",
       name: "sojousef",
       designation: "Client",
       company: "From Australia",
